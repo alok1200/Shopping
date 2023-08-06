@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { popularProducts } from "../Data";
 import Product from "./Product";
-import { useState, useEffect, filters } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 
@@ -34,7 +34,7 @@ const Products = ({ cat, filter, sort }) => {
   useEffect(() => {
     if(!cat) return
     setFilteredProducts(products.filter((item) => item.category.includes(cat)));
-  }, [products, cat, filters]);
+  }, [products, cat, filter]);
 
   useEffect(() => {
     if ((sort = "newest")) {
